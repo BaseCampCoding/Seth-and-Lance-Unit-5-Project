@@ -1,7 +1,7 @@
-const Key = ({ note }) => {
+const Key = ({ note, type }) => {
   return (
     <div>
-      <button className="note">{note}</button>
+      <button className={type}></button>
     </div>
   );
 };
