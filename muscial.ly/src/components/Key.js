@@ -1,11 +1,8 @@
-import useSound from "use-sound";
-import sheesh from "../sheesh.mp3";
-
 const Key = ({ note, type }) => {
-  const [playAudio] = useSound(sheesh);
+  const className = `note ${type}`
   return (
     <div>
-      <button onClick={playAudio} className={type}></button>
+      <button id={note} className={className}></button>
     </div>
   );
 };
