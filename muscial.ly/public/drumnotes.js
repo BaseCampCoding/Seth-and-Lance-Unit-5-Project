@@ -1,7 +1,4 @@
-const drumnotes = document.getElementsByClassName("drumnote");
-console.log(drumnotes);
-
-for (const drumnote of drumnotes) {
+for (const drumnote of document.getElementsByClassName("drumnote")) {
   drumnote.addEventListener("click", () => {
     const sound = new Audio(`/instruments/acousticdrum/${drumnote.id}.wav`);
     sound.play();
