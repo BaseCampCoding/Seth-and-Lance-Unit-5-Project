@@ -12,18 +12,18 @@ for (const note of document.querySelectorAll(".note")) {
 window.addEventListener("keydown", (Event) => {
   if (Event.code && Event.shiftKey) {
     const sound = new Audio(
-      `/instruments/piano/${keysTranslator[Event.code]}s.ogg`
+      `/instruments/piano/${pianoKeysTranslator[Event.code]}s.ogg`
     );
     sound.volume = 0.1;
-    const key = document.getElementById(`${keysTranslator[Event.code]}s`);
+    const key = document.getElementById(`${pianoKeysTranslator[Event.code]}s`);
     key.classList.add("note-black-pressed");
     return sound.play();
   }
 
   const sound = new Audio(
-    `/instruments/piano/${keysTranslator[Event.code]}.ogg`
+    `/instruments/piano/${pianoKeysTranslator[Event.code]}.ogg`
   );
-  const key = document.getElementById(`${keysTranslator[Event.code]}`);
+  const key = document.getElementById(`${pianoKeysTranslator[Event.code]}`);
   key.classList.add("note-white-pressed");
   sound.volume = 0.1;
   sound.play();
@@ -33,8 +33,8 @@ window.addEventListener("keydown", (Event) => {
 });
 
 window.addEventListener("keyup", (Event) => {
-  const naturalKey = document.getElementById(`${keysTranslator[Event.code]}`);
+  const naturalKey = document.getElementById(`${pianoKeysTranslator[Event.code]}`);
   naturalKey.classList.remove("note-white-pressed");
-  const sharpKey = document.getElementById(`${keysTranslator[Event.code]}s`);
+  const sharpKey = document.getElementById(`${pianoKeysTranslator[Event.code]}s`);
   sharpKey ? sharpKey.classList.remove("note-black-pressed") : "";
 });

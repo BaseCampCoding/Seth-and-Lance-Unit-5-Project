@@ -65,6 +65,10 @@ code {
   border: 1px solid black;
 }
 
+.drumnote-pressed {
+  background-color: orange;
+}
+
 .drumnote:hover {
   background-color: lightgray;
 }
