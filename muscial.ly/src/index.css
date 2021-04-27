@@ -24,6 +24,10 @@ code {
   background-color: white;
 }
 
+.note-white-pressed {
+  background-color: orange;
+}
+
 .note-white:hover {
   background-color: lightgray;
 }
@@ -36,6 +40,10 @@ code {
   height: 60px;
   z-index: 2;
   background-color: #333;
+}
+
+.note-black-pressed {
+  background-color: orange;
 }
 
 .note-black:hover {
