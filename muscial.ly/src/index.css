@@ -40,6 +40,8 @@ code {
   height: 60px;
   z-index: 2;
   background-color: #333;
+  color: white;
+  font-size: 10px;
 }
 
 .note-black-pressed {
