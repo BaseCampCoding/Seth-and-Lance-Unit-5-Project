@@ -1,8 +1,8 @@
-const Key = ({ note, type }) => {
+const Key = ({ note, type, keyChar }) => {
   const className = `note ${type}`
   return (
     <div>
-      <button id={note} className={className}></button>
+      <button id={note} className={className}>{keyChar}</button>
     </div>
   );
 };
