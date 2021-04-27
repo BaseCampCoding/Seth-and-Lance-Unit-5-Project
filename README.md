@@ -1,5 +1,3 @@
 # Muscially
-### A Music Kit Website
-
-[muscially.netlify.app](!muscially.netlify.app)
+### A Music Kit Website made by Seth Hogue and Lance Easley
 
