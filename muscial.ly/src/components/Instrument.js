@@ -3,7 +3,7 @@ import Piano from "./Piano";
 import Drums from "./Drums";
 
 const Instrument = () => {
-  const [currentInstrument, setCurrentInstrument] = useState("piano");
+  const [currentInstrument, setCurrentInstrument] = useState("drums");
 
   const changeInstrument = () => {
     const selector = document.getElementById("selector");
@@ -16,7 +16,7 @@ const Instrument = () => {
   return (
     <div>
       <select
-        defaultValue="piano"
+        defaultValue="drums"
         id="selector"
         name="instrument"
         onChange={() => {

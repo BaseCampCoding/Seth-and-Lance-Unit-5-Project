@@ -1,7 +1,7 @@
-const DrumNote = (note) => {
+const DrumNote = ({ note }) => {
   return (
     <div>
-      <button id="drumnote"></button>
+      <button id={note} className="drumnote"></button>
     </div>
   );
 };

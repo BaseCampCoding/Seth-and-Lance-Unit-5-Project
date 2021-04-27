@@ -56,13 +56,13 @@ code {
   justify-content: center;
 }
 
-#drumnote {
+.drumnote {
   width: 100px;
   height: 100px;
   background-color: white;
   border: 1px solid black;
 }
 
-#drumnote:hover {
+.drumnote:hover {
   background-color: lightgray;
 }
