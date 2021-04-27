@@ -9,18 +9,18 @@ const Instrument = () => {
     const selector = document.getElementById("selector");
     if (selector.value === "piano") {
       setCurrentInstrument("piano");
-      var script = document.createElement("script");
-      script.id = "pianoscript";
-      script.src = "notes.js";
+      var script1 = document.createElement("script");
+      script1.id = "pianoscript";
+      script1.src = "notes.js";
       document.head.removeChild(document.getElementById("drumscript"));
-      document.head.append(script);
+      document.head.append(script1);
     } else if (selector.value === "drums") {
       setCurrentInstrument("drums");
-      var script = document.createElement("script");
-      script.id = "drumscript";
-      script.src = "drumnotes.js";
+      var script2 = document.createElement("script");
+      script2.id = "drumscript";
+      script2.src = "drumnotes.js";
       document.head.removeChild(document.getElementById("pianoscript"));
-      document.head.append(script);
+      document.head.append(script2);
     }
   };
   return (
