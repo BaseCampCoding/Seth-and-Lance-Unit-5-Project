@@ -19,6 +19,8 @@ code {
 }
 
 .note-white {
+  display: flex;
+  flex-direction: column-reverse;
   width: 29px;
   height: 150px;
   background-color: white;
@@ -41,7 +43,9 @@ code {
   z-index: 2;
   background-color: #333;
   color: white;
-  font-size: 10px;
+  font-size: 8px;
+  text-align: justify;
+  padding: 5px;
 }
 
 .note-black-pressed {

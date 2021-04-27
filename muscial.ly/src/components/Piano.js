@@ -6,6 +6,7 @@ const Piano = () => {
   return (
     <>
       <h3>This is definitely a piano.</h3>
+      <label for="beginner">Beginner Mode</label>
       <input
         onChange={() => setBeginnerMode(!beginnerMode)}
         id="beginner"

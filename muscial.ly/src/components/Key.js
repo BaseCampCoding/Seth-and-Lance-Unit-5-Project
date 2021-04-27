@@ -3,10 +3,10 @@ const Key = ({ beginner, note, type, keyChar }) => {
   return (
     <div>
       <button id={note} className={className}>
-        {keyChar}
+        {keyChar.toUpperCase()}
         <br />
         <br />
-        {beginner && note}
+        {beginner && note.toUpperCase()}
       </button>
     </div>
   );
