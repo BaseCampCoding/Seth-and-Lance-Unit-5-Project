@@ -1,6 +1,7 @@
 for (const note of document.querySelectorAll(".note")) {
   note.addEventListener("click", () => {
     const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
+    sound.volume = 0.1;
     sound.play();
     setTimeout(() => {
       sound.pause();
@@ -13,6 +14,7 @@ window.addEventListener("keydown", (Event) => {
     const sound = new Audio(
       `/instruments/piano/${keysTranslator[Event.code]}s.ogg`
     );
+    sound.volume = 0.1;
     const key = document.getElementById(`${keysTranslator[Event.code]}s`);
     key.classList.add("note-black-pressed");
     return sound.play();
@@ -23,6 +25,7 @@ window.addEventListener("keydown", (Event) => {
   );
   const key = document.getElementById(`${keysTranslator[Event.code]}`);
   key.classList.add("note-white-pressed");
+  sound.volume = 0.1;
   sound.play();
   setTimeout(() => {
     sound.pause();

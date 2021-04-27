@@ -1,9 +1,16 @@
 import Key from "./Key";
+import { useState } from "react";
 
 const Piano = () => {
+  const [beginnerMode, setBeginnerMode] = useState(false);
   return (
     <>
       <h3>This is definitely a piano.</h3>
+      <input
+        onChange={() => setBeginnerMode(!beginnerMode)}
+        id="beginner"
+        type="checkbox"
+      ></input>
       <div className="notes">
         <Key type="note-white" note="c2" />
         <Key type="note-black" note="c2s" />
