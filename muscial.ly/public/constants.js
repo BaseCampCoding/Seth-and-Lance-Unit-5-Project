@@ -40,12 +40,11 @@ let pianoKeysTranslator = {
 let drumKeysTranslator = {
   Digit1: "snare1",
   Digit2: "snare2",
-  Digit3: "kick1",
-  Digit4: "kick2",
-  Digit5: "hat1",
-  Digit6: "hat2",
-  Digit7: "crash1",
-  Digit8: "multcrash1",
-  Digit9: "multcrash2",
+  Digit3: "snare3",
+  Digit4: "kick1",
+  Digit5: "kick20",
+  Digit6: "ophat1",
+  Digit7: "hat2",
+  Digit8: "multcrashlo1",
+  Digit9: "multcrashhi1",
 };
-
