@@ -49,3 +49,20 @@ code {
 .note-black:hover {
   background-color: black;
 }
+
+#drums {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  justify-content: center;
+}
+
+#drumnote {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+#drumnote:hover {
+  background-color: lightgray;
+}
