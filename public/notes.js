@@ -134,7 +134,6 @@ document.getElementById("ghost-play-submit").addEventListener("click", () => {
     }
   }
   
-  let timeouts = []
   for (let i = 0; i < timings.length; i++) {
     const timeout = setTimeout(() => {
       for (const char of notes[i]) {
@@ -145,3 +144,9 @@ document.getElementById("ghost-play-submit").addEventListener("click", () => {
     timeouts.push(timeout)
   }
 })
+
+document.getElementById("ghost-play-stop").addEventListener("click", () => {
+  for (const timeout of timeouts) {
+    clearTimeout(timeout);
+  };
+});

@@ -215,3 +215,5 @@ let acceptedGhostKeys = [
   "V",
   "B",
 ]
+
+let timeouts = []
