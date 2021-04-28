@@ -75,6 +75,10 @@ const Piano = () => {
         <Key beginner={beginnerMode} type="note-white" keyChar="n" note="b6" />
         <Key beginner={beginnerMode} type="note-white" keyChar="m" note="c7" />
       </div>
+      <h3>Ghost Play</h3>
+      <textarea id="ghost-play-input" rows="16" cols="72"></textarea>
+      <br/>
+      <button id="ghost-play-submit">Play</button>
     </>
   );
 };
