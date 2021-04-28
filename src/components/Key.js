@@ -3,7 +3,7 @@ const Key = ({ beginner, note, type, keyChar }) => {
   return (
     <div>
       <button id={note} className={className}>
-        {keyChar.toUpperCase()}
+        {keyChar}
         <br />
         <br />
         {beginner && note.toUpperCase()}
