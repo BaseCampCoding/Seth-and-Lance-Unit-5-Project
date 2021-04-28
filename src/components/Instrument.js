@@ -5,7 +5,6 @@ import metronomeSound from "../metronome.mp3";
 
 const Instrument = () => {
   const [currentInstrument, setCurrentInstrument] = useState("piano");
-  const [metronomeLooping, setMetronomeLooping] = useState(false);
   const mSound = new Audio(metronomeSound);
 
   const changeMetronome = () => {

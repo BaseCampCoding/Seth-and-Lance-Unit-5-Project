@@ -1,10 +1,4 @@
 for (const note of document.querySelectorAll(".note")) {
-  const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
-  sound.volume = 0;
-  sound.play();
-}
-
-for (const note of document.querySelectorAll(".note")) {
   note.addEventListener("click", () => {
     const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
     sound.volume = 0.1;
@@ -57,16 +51,13 @@ window.addEventListener("keyup", (Event) => {
 
 // Ghost Play
 document.getElementById("ghost-play-submit").addEventListener("click", () => {
-
   function play(keyCode, isShifted) {
     if (isShifted) {
       const sound = new Audio(
         `/instruments/piano/${pianoKeysTranslator[keyCode]}s.ogg`
       );
       sound.volume = 0.1;
-      const key = document.getElementById(
-        `${pianoKeysTranslator[keyCode]}s`
-      );
+      const key = document.getElementById(`${pianoKeysTranslator[keyCode]}s`);
       key.classList.add("note-black-pressed");
       setTimeout(() => {
         sound.pause();
@@ -74,7 +65,7 @@ document.getElementById("ghost-play-submit").addEventListener("click", () => {
       }, 2000);
       return sound.play();
     }
-  
+
     const sound = new Audio(
       `/instruments/piano/${pianoKeysTranslator[keyCode]}.ogg`
     );
@@ -89,59 +80,61 @@ document.getElementById("ghost-play-submit").addEventListener("click", () => {
   }
 
   let timings = [];
-  let isGrouping = false
-  let group = []
-  let notes = []
+  let isGrouping = false;
+  let group = [];
+  let notes = [];
   for (const char of document.getElementById("ghost-play-input").value) {
-
     // Syntax Characters
     switch (char) {
       case ",":
         timings.push(100);
-        notes.push([""])
+        notes.push([""]);
         break;
       case ".":
         timings.push(250);
-        notes.push([""])
+        notes.push([""]);
         break;
       case "/":
         timings.push(500);
-        notes.push([""])
+        notes.push([""]);
         break;
       case "|":
         timings.push(1000);
-        notes.push([""])
+        notes.push([""]);
         break;
       case "[":
         isGrouping = true;
         break;
       case "]":
         isGrouping = false;
-        notes.push(group)
+        notes.push(group);
         timings.push(100);
-        group = []
+        group = [];
         break;
-      }
-      
-      // Note Characters
-      if (acceptedGhostKeys.includes(char)) {
-        if (isGrouping) {
-          group.push(char)
-        } else {
-          notes.push([char])
-          timings.push(100);
+    }
+
+    // Note Characters
+    if (acceptedGhostKeys.includes(char)) {
+      if (isGrouping) {
+        group.push(char);
+      } else {
+        notes.push([char]);
+        timings.push(100);
       }
     }
   }
   
   for (let i = 0; i < timings.length; i++) {
-    const timeout = setTimeout(() => {
-      for (const char of notes[i]) {
-        const [ keyCode, isShifted ] = ghostPlayKeyTranslator[char]
-        play(keyCode, isShifted)
-      }
-    }, timings.slice(0, i + 1).reduce((acc, curr) => acc + curr))
-    timeouts.push(timeout)
+    const timeout = setTimeout(
+      () => {
+        for (const char of notes[i]) {
+          const [keyCode, isShifted] = ghostPlayKeyTranslator[char];
+          play(keyCode, isShifted);
+        }
+      },
+      timings.slice(0, i + 1).reduce((acc, curr) => acc + curr)
+    );
+    timeouts.push(timeout);
   }
 })
 

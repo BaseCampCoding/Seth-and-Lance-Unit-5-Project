@@ -85,10 +85,16 @@ h3 {
   resize: none;
   border-radius: 5px;
   outline: none;
+  flex-basis: 65%;
 }
 
 #ghost-play-submit, #ghost-play-stop {
   margin-top: 5px;
   background-color: white;
   padding: 5px;
+}
+
+.ghostplay {
+  display: flex;
+  flex-direction: row;
 }
