@@ -1,9 +1,25 @@
 import { useState } from "react";
 import Piano from "./Piano";
 import Drums from "./Drums";
+import metronomeSound from "../metronome.mp3";
 
 const Instrument = () => {
   const [currentInstrument, setCurrentInstrument] = useState("piano");
+  const [metronomeLooping, setMetronomeLooping] = useState(false);
+  const mSound = new Audio(metronomeSound);
+
+  const changeMetronome = () => {
+    const metronome = document.getElementById("metronome");
+    const speed = Number(metronome.value);
+    if (speed === 0) {
+      mSound.pause();
+      return;
+    }
+    setInterval(() => {
+      mSound.playbackRate = speed;
+      mSound.play();
+    }, 1);
+  };
 
   const changeInstrument = () => {
     const selector = document.getElementById("selector");
@@ -36,6 +52,18 @@ const Instrument = () => {
         <option value="piano">Piano</option>
         <option value="drums">Drums</option>
       </select>
+      <label htmlFor="metronome">Metronome Speed</label>
+      <input
+        id="metronome"
+        name="metronome"
+        onChange={() => {
+          changeMetronome();
+        }}
+        type="range"
+        min="0.0"
+        max="2.0"
+        step="0.1"
+      ></input>
       {currentInstrument === "piano" && <Piano />}
       {currentInstrument === "drums" && <Drums />}
     </div>
