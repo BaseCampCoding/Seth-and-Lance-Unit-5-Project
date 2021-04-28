@@ -76,3 +76,19 @@ code {
 .drumnote:hover {
   background-color: lightgray;
 }
+
+h3 {
+  margin: 25px 0px 10px;
+}
+
+#ghost-play-input {
+  resize: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+#ghost-play-submit {
+  margin-top: 5px;
+  background-color: white;
+  padding: 5px;
+}
