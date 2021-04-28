@@ -1,15 +1,21 @@
 const mSound = new Audio("./metronome.mp3");
-const metronome = document.getElementById("metronome");
+const metronomePWR = document.getElementById("metronomePWR");
+const metronomeSpeed = document.getElementById("metronomeSpeed");
 
-metronome.addEventListener("change", () => {
-  mSound.pause();
-  const speed = Number(metronome.value);
-  if (speed === 0) {
-    mSound.pause();
-    return;
+metronomePWR.addEventListener("change", () => {
+  if (metronomePWR.checked) {
+    var loop = setInterval(() => {
+      mSound.play();
+      console.log("playing");
+      if (!metronomePWR.checked) {
+        mSound.pause();
+        clearInterval(loop);
+      }
+    }, 1000);
   }
-  setInterval(() => {
-    mSound.playbackRate = speed;
-    mSound.play();
-  });
+});
+
+metronomeSpeed.addEventListener("change", () => {
+  const speed = Number(metronomeSpeed.value);
+  mSound.playbackRate = speed;
 });
