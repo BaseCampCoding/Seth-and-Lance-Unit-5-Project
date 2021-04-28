@@ -87,8 +87,8 @@ const Piano = () => {
           <li>Group Notes with [ ]</li>
           <li>"," = 100ms rest</li>
           <li>"." = 250ms rest</li>
-          <li>"/" = 500 ms rest</li>
-          <li>"|" = 1000 ms rest</li>
+          <li>"/" = 500ms rest</li>
+          <li>"|" = 1000ms rest</li>
         </ul>
       </div>
       <br />
