@@ -82,7 +82,7 @@ const Piano = () => {
           <option value="Sweden">Sweden</option>
           <option value="Wet-Hands">Wet Hands</option>
         </select>
-        <textarea spellcheck="false" id="ghost-play-input" rows="16" cols="72"></textarea>
+        <textarea spellCheck="false" id="ghost-play-input" rows="16" cols="72"></textarea>
         <ul>
           <li>Group Notes with [ ]</li>
           <li>"," = 100ms rest</li>
