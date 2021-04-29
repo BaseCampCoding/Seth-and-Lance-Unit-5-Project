@@ -12,6 +12,7 @@ const Piano = () => {
         id="beginner"
         type="checkbox"
       ></input>
+      <br /> <br />
       <div className="notes">
         <Key beginner={beginnerMode} type="note-white" keyChar="1" note="c2" />
         <Key beginner={beginnerMode} type="note-black" keyChar="!" note="c2s" />
@@ -82,14 +83,21 @@ const Piano = () => {
           <option value="Sweden">Sweden</option>
           <option value="Wet-Hands">Wet Hands</option>
         </select>
-        <textarea spellCheck="false" id="ghost-play-input" rows="16" cols="72"></textarea>
-        <ul>
-          <li>Group Notes with [ ]</li>
-          <li>"," = 100ms rest</li>
-          <li>"." = 250ms rest</li>
-          <li>"/" = 500ms rest</li>
-          <li>"|" = 1000ms rest</li>
-        </ul>
+        <textarea
+          spellCheck="false"
+          id="ghost-play-input"
+          rows="16"
+          cols="72"
+        ></textarea>
+        <div id="instructions">
+          <ul>
+            <li>Group Notes with [ ]</li>
+            <li>"," = 100ms rest</li>
+            <li>"." = 250ms rest</li>
+            <li>"/" = 500ms rest</li>
+            <li>"|" = 1000ms rest</li>
+          </ul>
+        </div>
       </div>
       <br />
       <button id="ghost-play-submit">Play</button>

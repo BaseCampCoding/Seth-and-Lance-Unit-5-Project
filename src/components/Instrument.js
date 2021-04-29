@@ -25,32 +25,34 @@ const Instrument = () => {
   };
   return (
     <div>
-      <select
-        defaultValue="piano"
-        id="selector"
-        name="instrument"
-        onChange={() => {
-          changeInstrument();
-        }}
-      >
-        <option value="piano">Piano</option>
-        <option value="drums">Drums</option>
-      </select>
-      <div>
-        <h3>Metronome</h3>
-        <label htmlFor="metronomePWR">On?</label>
-        <input id="metronomePWR" name="metronomePWR" type="checkbox"></input>
-        <br />
-        <label htmlFor="metronomeSpeed">Speed</label>
-        <input
-          id="metronomeSpeed"
-          name="metronomeSpeed"
-          type="range"
-          min="0.0"
-          max="2.0"
-          step="0.1"
-          defaultValue="1.0"
-        ></input>
+      <div id="options">
+        <select
+          defaultValue="piano"
+          id="selector"
+          name="instrument"
+          onChange={() => {
+            changeInstrument();
+          }}
+        >
+          <option value="piano">Piano</option>
+          <option value="drums">Drums</option>
+        </select>
+        <div id="metronome">
+          <h3>Metronome</h3>
+          <label htmlFor="metronomePWR">On?</label>
+          <input id="metronomePWR" name="metronomePWR" type="checkbox"></input>
+          <br />
+          <label htmlFor="metronomeSpeed">Speed</label>
+          <input
+            id="metronomeSpeed"
+            name="metronomeSpeed"
+            type="range"
+            min="0.0"
+            max="2.0"
+            step="0.1"
+            defaultValue="1.0"
+          ></input>
+        </div>
       </div>
 
       {currentInstrument === "piano" && <Piano />}
