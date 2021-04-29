@@ -100,15 +100,32 @@ h3 {
   margin: 25px 0px 10px;
 }
 
-#ghostTitle {
+#ghost-play-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
-  text-align: center;
   margin: 0 auto;
   margin-top: 25px;
   padding: 5px;
   width: fit-content;
   border-radius: 5%;
 }
+
+#ghostTitle {
+  margin: 0 auto;
+  margin-top: 0px;
+  padding: 5px;
+  width: fit-content;
+}
+
+#ghost-play-header p {
+  margin: 0 auto;
+  margin-top: 0px;
+  padding: 5px;
+  width: fit-content;
+}
+
 #ghost-play-input {
   max-width: 640px;
   resize: none;

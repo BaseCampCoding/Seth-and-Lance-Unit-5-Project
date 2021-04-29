@@ -76,7 +76,11 @@ const Piano = () => {
         <Key beginner={beginnerMode} type="note-white" keyChar="n" note="b6" />
         <Key beginner={beginnerMode} type="note-white" keyChar="m" note="c7" />
       </div>
-      <h3 id="ghostTitle">Ghost Play</h3>
+      <div id="ghost-play-header">
+        <h3 id="ghostTitle">Ghost Play</h3>
+        <p>|</p>
+        <p id="ghost-play-time">--:--</p>
+      </div>
       <div className="ghostplay">
         <select name="songs" id="song-list">
           <option value="None">None</option>

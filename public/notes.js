@@ -93,7 +93,7 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
     const sound = new Audio(
       `/instruments/piano/${pianoKeysTranslator[keyCode]}.ogg`
       );
-    const key = document.getElementById(`${pianoKeysTranslator[keyCode]}`);
+      const key = document.getElementById(`${pianoKeysTranslator[keyCode]}`);
     key?.classList.add("note-white-pressed");
     sound.volume = 0.1;
     safePlay(sound);
@@ -102,6 +102,13 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
       key?.classList.remove("note-white-pressed");
     }, 2000);
   }
+
+  function updateTime(time) {
+    const minutes = Math.floor(time / 60000)
+    const seconds = Math.floor((time / 1000) % 60)
+    timeString = `${minutes <= 9 ? "0" : ""}${minutes}:${seconds <= 9 ? "0" : ""}${seconds}`
+    ghostPlayTimeContainer.innerText = timeString
+  }
   
   if (document.getElementById("ghost-play-button").innerText === "Play") {
     document.getElementById("ghost-play-button").innerText = "Stop"
@@ -109,6 +116,9 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
     let isGrouping = false;
     let group = [];
     let notes = [];
+    let totalTime = 0;
+    let timeDisplay = "";
+    let currentTime = 0
 
     for (const char of document.getElementById("ghost-play-input").value) {
       // Syntax Characters
@@ -150,27 +160,41 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
         }
       }
     }
-    
-    for (let i = 0; i < timings.length; i++) {
-      const timeout = setTimeout(
-        () => {
-          for (const char of notes[i]) {
-            const noteData = ghostPlayKeyTranslator[char];
-            play(noteData?.keyCode, noteData?.isShifted);
-          }
-        },
-        timings.slice(0, i + 1).reduce((acc, curr) => acc + curr)
-      );
-      timeouts.push(timeout);
+
+    if (timings.length > 0) {
+      totalTime = timings.reduce((acc, curr) => acc + curr);
+      currentTime = totalTime
+      const autoStop = setTimeout(() => {
+        document.getElementById("ghost-play-button").innerText = "Play";
+        ghostPlayTimeContainer.innerText = "--:--"
+      }, totalTime + 100)
+      timeouts.push(autoStop)
+      updateTime(currentTime)
+
+      for (let i = 0; i < timings.length; i++) {
+        const timeout = setTimeout(
+          () => {
+            for (const char of notes[i]) {
+              const noteData = ghostPlayKeyTranslator[char];
+              play(noteData?.keyCode, noteData?.isShifted);
+            }
+            currentTime -= timings[i]
+            updateTime(currentTime)
+          },
+          timings.slice(0, i + 1).reduce((acc, curr) => acc + curr)
+        );
+        timeouts.push(timeout);
+      }
     }
   } else {
     for (const timeout of timeouts) {
       clearTimeout(timeout);
     };
     document.getElementById("ghost-play-button").innerText = "Play";
+    ghostPlayTimeContainer.innerText = "--:--"
   }
 })
 
 document.getElementById("song-list").addEventListener("input", (Event) => {
-  document.getElementById("ghost-play-input").innerText = songs[Event.target.value] ?? "Cannot fetch song"
+  document.getElementById("ghost-play-input").value = songs[Event.target.value] ?? "Cannot fetch song"
 })

@@ -375,3 +375,5 @@ x.,c.,b.,c.,
 [qetu]|/
 [8qeti]|/`,
 }
+
+const ghostPlayTimeContainer = document.getElementById("ghost-play-time")
