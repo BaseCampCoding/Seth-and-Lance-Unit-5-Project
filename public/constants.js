@@ -380,3 +380,20 @@ const ghostPlayTimeContainer = document.getElementById("ghost-play-time")
 const pianoNotes = document.querySelectorAll(".note")
 const ghostPlayButton = document.getElementById("ghost-play-button")
 const ghostPlayInput = document.getElementById("ghost-play-input")
+const instrumentSelector = document.getElementById("selector")
+
+function safePlay(sound) {
+  let playPromise = sound.play();
+
+  if (playPromise !== undefined) {
+    playPromise
+      .then(_ => {
+        // Automatic playback started!
+        return
+      })
+      .catch(error => {
+        // Auto-play was prevented
+        return
+      });
+  }
+}
