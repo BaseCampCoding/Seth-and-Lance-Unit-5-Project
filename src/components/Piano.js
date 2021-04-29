@@ -12,6 +12,7 @@ const Piano = () => {
         id="beginner"
         type="checkbox"
       ></input>
+      <br /> <br />
       <div className="notes">
         <Key beginner={beginnerMode} type="note-white" keyChar="1" note="c2" />
         <Key beginner={beginnerMode} type="note-black" keyChar="!" note="c2s" />
@@ -75,7 +76,7 @@ const Piano = () => {
         <Key beginner={beginnerMode} type="note-white" keyChar="n" note="b6" />
         <Key beginner={beginnerMode} type="note-white" keyChar="m" note="c7" />
       </div>
-      <h3>Ghost Play</h3>
+      <h3 id="ghostTitle">Ghost Play</h3>
       <div className="ghostplay">
         <select name="songs" id="song-list">
           <option value="None">None</option>
@@ -83,16 +84,22 @@ const Piano = () => {
           <option value="Wet-Hands">Wet Hands</option>
           <option value="Married-Life">Married Life</option>
         </select>
-        <textarea spellCheck="false" id="ghost-play-input" rows="16" cols="72"></textarea>
-        <ul>
-          <li>Group Notes with [ ]</li>
-          <li>"," = 100ms rest</li>
-          <li>"." = 250ms rest</li>
-          <li>"/" = 500ms rest</li>
-          <li>"|" = 1000ms rest</li>
-        </ul>
+        <textarea
+          spellCheck="false"
+          id="ghost-play-input"
+          rows="16"
+          cols="72"
+        ></textarea>
+        <div id="instructions">
+          <ul>
+            <li>Group Notes with [ ]</li>
+            <li>"," = 100ms rest</li>
+            <li>"." = 250ms rest</li>
+            <li>"/" = 500ms rest</li>
+            <li>"|" = 1000ms rest</li>
+          </ul>
+        </div>
       </div>
-      <br />
       <button id="ghost-play-submit">Play</button>
       <button id="ghost-play-stop">Stop</button>
     </>
