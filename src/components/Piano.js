@@ -81,6 +81,7 @@ const Piano = () => {
           <option value="None">None</option>
           <option value="Sweden">Sweden</option>
           <option value="Wet-Hands">Wet Hands</option>
+          <option value="Married-Life">Married Life</option>
         </select>
         <textarea spellCheck="false" id="ghost-play-input" rows="16" cols="72"></textarea>
         <ul>
