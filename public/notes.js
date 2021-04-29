@@ -16,11 +16,15 @@ function safePlay(sound) {
   }
 }
 
-for (const note of document.querySelectorAll(".note")) {
-  const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
-  sound.volume = 0;
-  safePlay(sound);
+function preloadNotes() {
+  for (const note of document.querySelectorAll(".note")) {
+    const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
+    sound.volume = 0;
+    safePlay(sound);
+  }
 }
+
+preloadNotes()
 
 for (const note of document.querySelectorAll(".note")) {
   note.addEventListener("click", () => {
@@ -106,38 +110,39 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
   function updateTime(time) {
     const minutes = Math.floor(time / 60000)
     const seconds = Math.floor((time / 1000) % 60)
-    timeString = `${minutes <= 9 ? "0" : ""}${minutes}:${seconds <= 9 ? "0" : ""}${seconds}`
+    const timeString = `${minutes <= 9 ? "0" : ""}${minutes}:${seconds <= 9 ? "0" : ""}${seconds}`
     ghostPlayTimeContainer.innerText = timeString
   }
   
   if (document.getElementById("ghost-play-button").innerText === "Play") {
     document.getElementById("ghost-play-button").innerText = "Stop"
-    let timings = [];
+    let timings = [1000];
     let isGrouping = false;
-    let group = [];
-    let notes = [];
+    let group = "";
+    let notes = [""];
     let totalTime = 0;
-    let timeDisplay = "";
     let currentTime = 0
+
+    preloadNotes()
 
     for (const char of document.getElementById("ghost-play-input").value) {
       // Syntax Characters
       switch (char) {
         case ",":
           timings.push(100);
-          notes.push([""]);
+          notes.push("");
           break;
         case ".":
           timings.push(250);
-          notes.push([""]);
+          notes.push("");
           break;
         case "/":
           timings.push(500);
-          notes.push([""]);
+          notes.push("");
           break;
         case "|":
           timings.push(1000);
-          notes.push([""]);
+          notes.push("");
           break;
         case "[":
           isGrouping = true;
@@ -146,16 +151,16 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
           isGrouping = false;
           notes.push(group);
           timings.push(100);
-          group = [];
+          group = "";
           break;
       }
   
       // Note Characters
       if (acceptedGhostKeys.includes(char)) {
         if (isGrouping) {
-          group.push(char);
+          group += char;
         } else {
-          notes.push([char]);
+          notes.push(char);
           timings.push(100);
         }
       }
