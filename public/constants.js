@@ -1,4 +1,4 @@
-let pianoKeysTranslator = {
+const pianoKeysTranslator = {
   Digit1: "c2",
   Digit2: "d2",
   Digit3: "e2",
@@ -37,7 +37,7 @@ let pianoKeysTranslator = {
   KeyM: "c7",
 };
 
-let acceptedPianoKeys = [
+const acceptedPianoKeys = [
   "Digit1",
   "Digit2",
   "Digit3",
@@ -76,7 +76,7 @@ let acceptedPianoKeys = [
   "KeyM", 
 ]
 
-let drumKeysTranslator = {
+const drumKeysTranslator = {
   Digit1: "snare1",
   Digit2: "snare2",
   Digit3: "snare3",
@@ -88,7 +88,7 @@ let drumKeysTranslator = {
   Digit9: "multcrashhi1",
 };
 
-let ghostPlayKeyTranslator = {
+const ghostPlayKeyTranslator = {
   "1": { keyCode: "Digit1", isShifted: false},
   "2": { keyCode: "Digit2", isShifted: false},
   "3": { keyCode: "Digit3", isShifted: false},
@@ -152,7 +152,7 @@ let ghostPlayKeyTranslator = {
   "B": { keyCode: "KeyB", isShifted: true},
 }
 
-let acceptedGhostKeys = [
+const acceptedGhostKeys = [
   "1",
   "2",
   "3",
@@ -216,9 +216,9 @@ let acceptedGhostKeys = [
   "B",
 ]
 
-let timeouts = []
+const timeouts = []
 
-let songs = {
+const songs = {
   "None": "",
   "Sweden": `[6et]| 7| [8yo]| 0| [9r]| 8| [I5y]||
 [6etu]| 7| [8yoa]| 0| [I9ry]| 8| [I5yp]||
@@ -377,3 +377,6 @@ x.,c.,b.,c.,
 }
 
 const ghostPlayTimeContainer = document.getElementById("ghost-play-time")
+const pianoNotes = document.querySelectorAll(".note")
+const ghostPlayButton = document.getElementById("ghost-play-button")
+const ghostPlayInput = document.getElementById("ghost-play-input")

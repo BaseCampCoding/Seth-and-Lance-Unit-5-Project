@@ -5,19 +5,17 @@ function safePlay(sound) {
     playPromise
       .then(_ => {
         // Automatic playback started!
-        // Show playing UI.
         return
       })
       .catch(error => {
         // Auto-play was prevented
-        // Show paused UI.
         return
       });
   }
 }
 
 function preloadNotes() {
-  for (const note of document.querySelectorAll(".note")) {
+  for (const note of pianoNotes) {
     const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
     sound.volume = 0;
     safePlay(sound);
@@ -26,7 +24,7 @@ function preloadNotes() {
 
 preloadNotes()
 
-for (const note of document.querySelectorAll(".note")) {
+for (const note of pianoNotes) {
   note.addEventListener("click", () => {
     const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
     sound.volume = 0.1;
@@ -78,7 +76,7 @@ window.addEventListener("keyup", (Event) => {
 });
 
 // Ghost Play
-document.getElementById("ghost-play-button").addEventListener("click", () => {
+ghostPlayButton.addEventListener("click", () => {
   function play(keyCode, isShifted) {
     if (isShifted) {
       const sound = new Audio(
@@ -114,8 +112,8 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
     ghostPlayTimeContainer.innerText = timeString
   }
   
-  if (document.getElementById("ghost-play-button").innerText === "Play") {
-    document.getElementById("ghost-play-button").innerText = "Stop"
+  if (ghostPlayButton.innerText === "Play") {
+    ghostPlayButton.innerText = "Stop"
     let timings = [1000];
     let isGrouping = false;
     let group = "";
@@ -125,7 +123,7 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
 
     preloadNotes()
 
-    for (const char of document.getElementById("ghost-play-input").value) {
+    for (const char of ghostPlayInput.value) {
       // Syntax Characters
       switch (char) {
         case ",":
@@ -170,7 +168,7 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
       totalTime = timings.reduce((acc, curr) => acc + curr);
       currentTime = totalTime
       const autoStop = setTimeout(() => {
-        document.getElementById("ghost-play-button").innerText = "Play";
+        ghostPlayButton.innerText = "Play";
         ghostPlayTimeContainer.innerText = "--:--"
       }, totalTime + 100)
       timeouts.push(autoStop)
@@ -195,11 +193,11 @@ document.getElementById("ghost-play-button").addEventListener("click", () => {
     for (const timeout of timeouts) {
       clearTimeout(timeout);
     };
-    document.getElementById("ghost-play-button").innerText = "Play";
+    ghostPlayButton.innerText = "Play";
     ghostPlayTimeContainer.innerText = "--:--"
   }
 })
 
 document.getElementById("song-list").addEventListener("input", (Event) => {
-  document.getElementById("ghost-play-input").value = songs[Event.target.value] ?? "Cannot fetch song"
+  ghostPlayInput.value = songs[Event.target.value] ?? "Cannot fetch song"
 })
