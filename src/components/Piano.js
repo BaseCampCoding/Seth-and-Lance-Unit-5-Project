@@ -100,8 +100,7 @@ const Piano = () => {
           </ul>
         </div>
       </div>
-      <button id="ghost-play-submit">Play</button>
-      <button id="ghost-play-stop">Stop</button>
+      <button id="ghost-play-button">Play</button>
     </>
   );
 };

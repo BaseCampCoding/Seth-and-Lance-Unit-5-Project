@@ -74,7 +74,7 @@ window.addEventListener("keyup", (Event) => {
 });
 
 // Ghost Play
-document.getElementById("ghost-play-submit").addEventListener("click", () => {
+document.getElementById("ghost-play-button").addEventListener("click", () => {
   function play(keyCode, isShifted) {
     if (isShifted) {
       const sound = new Audio(
@@ -92,7 +92,7 @@ document.getElementById("ghost-play-submit").addEventListener("click", () => {
 
     const sound = new Audio(
       `/instruments/piano/${pianoKeysTranslator[keyCode]}.ogg`
-    );
+      );
     const key = document.getElementById(`${pianoKeysTranslator[keyCode]}`);
     key?.classList.add("note-white-pressed");
     sound.volume = 0.1;
@@ -102,71 +102,74 @@ document.getElementById("ghost-play-submit").addEventListener("click", () => {
       key?.classList.remove("note-white-pressed");
     }, 2000);
   }
+  
+  if (document.getElementById("ghost-play-button").innerText === "Play") {
+    document.getElementById("ghost-play-button").innerText = "Stop"
+    let timings = [];
+    let isGrouping = false;
+    let group = [];
+    let notes = [];
 
-  let timings = [];
-  let isGrouping = false;
-  let group = [];
-  let notes = [];
-  for (const char of document.getElementById("ghost-play-input").value) {
-    // Syntax Characters
-    switch (char) {
-      case ",":
-        timings.push(100);
-        notes.push([""]);
-        break;
-      case ".":
-        timings.push(250);
-        notes.push([""]);
-        break;
-      case "/":
-        timings.push(500);
-        notes.push([""]);
-        break;
-      case "|":
-        timings.push(1000);
-        notes.push([""]);
-        break;
-      case "[":
-        isGrouping = true;
-        break;
-      case "]":
-        isGrouping = false;
-        notes.push(group);
-        timings.push(100);
-        group = [];
-        break;
-    }
-
-    // Note Characters
-    if (acceptedGhostKeys.includes(char)) {
-      if (isGrouping) {
-        group.push(char);
-      } else {
-        notes.push([char]);
-        timings.push(100);
+    for (const char of document.getElementById("ghost-play-input").value) {
+      // Syntax Characters
+      switch (char) {
+        case ",":
+          timings.push(100);
+          notes.push([""]);
+          break;
+        case ".":
+          timings.push(250);
+          notes.push([""]);
+          break;
+        case "/":
+          timings.push(500);
+          notes.push([""]);
+          break;
+        case "|":
+          timings.push(1000);
+          notes.push([""]);
+          break;
+        case "[":
+          isGrouping = true;
+          break;
+        case "]":
+          isGrouping = false;
+          notes.push(group);
+          timings.push(100);
+          group = [];
+          break;
+      }
+  
+      // Note Characters
+      if (acceptedGhostKeys.includes(char)) {
+        if (isGrouping) {
+          group.push(char);
+        } else {
+          notes.push([char]);
+          timings.push(100);
+        }
       }
     }
-  }
-  
-  for (let i = 0; i < timings.length; i++) {
-    const timeout = setTimeout(
-      () => {
-        for (const char of notes[i]) {
-          const noteData = ghostPlayKeyTranslator[char];
-          play(noteData?.keyCode, noteData?.isShifted);
-        }
-      },
-      timings.slice(0, i + 1).reduce((acc, curr) => acc + curr)
-    );
-    timeouts.push(timeout);
+    
+    for (let i = 0; i < timings.length; i++) {
+      const timeout = setTimeout(
+        () => {
+          for (const char of notes[i]) {
+            const noteData = ghostPlayKeyTranslator[char];
+            play(noteData?.keyCode, noteData?.isShifted);
+          }
+        },
+        timings.slice(0, i + 1).reduce((acc, curr) => acc + curr)
+      );
+      timeouts.push(timeout);
+    }
+  } else {
+    for (const timeout of timeouts) {
+      clearTimeout(timeout);
+    };
+    document.getElementById("ghost-play-button").innerText = "Play";
   }
 })
-
-document.getElementById("ghost-play-stop").addEventListener("click", () => {
-  for (const timeout of timeouts) {
-    clearTimeout(timeout);
-  };
-});
 
 document.getElementById("song-list").addEventListener("input", (Event) => {
   document.getElementById("ghost-play-input").innerText = songs[Event.target.value] ?? "Cannot fetch song"

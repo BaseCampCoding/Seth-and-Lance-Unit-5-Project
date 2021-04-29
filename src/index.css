@@ -8,6 +8,7 @@ body {
   background-image: url(https://c4.wallpaperflare.com/wallpaper/302/693/318/musical-notes-background-wallpaper-preview.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 
 code {
@@ -115,8 +116,7 @@ h3 {
   flex-basis: 65%;
 }
 
-#ghost-play-submit,
-#ghost-play-stop {
+#ghost-play-button {
   margin-top: 5px;
   background-color: white;
   padding: 5px;
