@@ -17,6 +17,12 @@ function safePlay(sound) {
 }
 
 for (const note of document.querySelectorAll(".note")) {
+  const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
+  sound.volume = 0;
+  safePlay(sound);
+}
+
+for (const note of document.querySelectorAll(".note")) {
   note.addEventListener("click", () => {
     const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
     sound.volume = 0.1;
