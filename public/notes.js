@@ -12,7 +12,7 @@ if (instrumentSelector.value === "piano") {
   for (const note of pianoNotes) {
     note.addEventListener("click", () => {
       const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
-      sound.volume = 0.1;
+      sound.volume = 0.2;
       safePlay(sound);
       setTimeout(() => {
         sound.pause();
@@ -26,7 +26,7 @@ if (instrumentSelector.value === "piano") {
         const sound = new Audio(
           `/instruments/piano/${pianoKeysTranslator[Event.code]}s.ogg`
         );
-        sound.volume = 0.1;
+        sound.volume = 0.2;
         const key = document.getElementById(
           `${pianoKeysTranslator[Event.code]}s`
         );
@@ -39,7 +39,7 @@ if (instrumentSelector.value === "piano") {
       );
       const key = document.getElementById(`${pianoKeysTranslator[Event.code]}`);
       key?.classList.add("note-white-pressed");
-      sound.volume = 0.1;
+      sound.volume = 0.2;
       safePlay(sound);
       setTimeout(() => {
         sound.pause();
@@ -67,7 +67,7 @@ if (instrumentSelector.value === "piano") {
         const sound = new Audio(
           `/instruments/piano/${pianoKeysTranslator[keyCode]}s.ogg`
         );
-        sound.volume = 0.1;
+        sound.volume = 0.2;
         const key = document.getElementById(`${pianoKeysTranslator[keyCode]}s`);
         key?.classList.add("note-black-pressed");
         setTimeout(() => {
@@ -82,7 +82,7 @@ if (instrumentSelector.value === "piano") {
         );
         const key = document.getElementById(`${pianoKeysTranslator[keyCode]}`);
       key?.classList.add("note-white-pressed");
-      sound.volume = 0.1;
+      sound.volume = 0.2;
       safePlay(sound);
       setTimeout(() => {
         sound.pause();
