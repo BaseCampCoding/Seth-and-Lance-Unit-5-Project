@@ -5,16 +5,18 @@ const Piano = () => {
   const [beginnerMode, setBeginnerMode] = useState(false);
   return (
     <>
-      <h3>This is definitely a piano.</h3>
-      <div>
-        <label htmlFor="beginner">Beginner Mode</label>
-        <input
-          onChange={() => setBeginnerMode(!beginnerMode)}
-          id="beginner"
-          type="checkbox"
-        ></input>
-        <label htmlFor="sheesh-input">Sheeshano</label>
-        <input id="sheesh-input" type="checkbox"/>
+      <div id="piano-header">
+        <h3>This is definitely a piano.</h3>
+        <div>
+          <label htmlFor="beginner">Beginner Mode</label>
+          <input
+            onChange={() => setBeginnerMode(!beginnerMode)}
+            id="beginner"
+            type="checkbox"
+          ></input>
+          <label id="sheesh-label" htmlFor="sheesh-input">Sheeshano</label>
+          <input id="sheesh-input" type="checkbox"/>
+        </div>
       </div>
       <br /> <br />
       <div className="notes">
