@@ -48,33 +48,33 @@ const acceptedPianoKeys = [
   "Digit8",
   "Digit9",
   "Digit0",
-  "KeyQ", 
-  "KeyW", 
-  "KeyE", 
-  "KeyR", 
-  "KeyT", 
-  "KeyY", 
-  "KeyU", 
-  "KeyI", 
-  "KeyO", 
-  "KeyP", 
-  "KeyA", 
-  "KeyS", 
-  "KeyD", 
-  "KeyF", 
-  "KeyG", 
-  "KeyH", 
-  "KeyJ", 
-  "KeyK", 
-  "KeyL", 
-  "KeyZ", 
-  "KeyX", 
-  "KeyC", 
-  "KeyV", 
-  "KeyB", 
-  "KeyN", 
-  "KeyM", 
-]
+  "KeyQ",
+  "KeyW",
+  "KeyE",
+  "KeyR",
+  "KeyT",
+  "KeyY",
+  "KeyU",
+  "KeyI",
+  "KeyO",
+  "KeyP",
+  "KeyA",
+  "KeyS",
+  "KeyD",
+  "KeyF",
+  "KeyG",
+  "KeyH",
+  "KeyJ",
+  "KeyK",
+  "KeyL",
+  "KeyZ",
+  "KeyX",
+  "KeyC",
+  "KeyV",
+  "KeyB",
+  "KeyN",
+  "KeyM",
+];
 
 const drumKeysTranslator = {
   Digit1: "snare1",
@@ -89,68 +89,68 @@ const drumKeysTranslator = {
 };
 
 const ghostPlayKeyTranslator = {
-  "1": { keyCode: "Digit1", isShifted: false},
-  "2": { keyCode: "Digit2", isShifted: false},
-  "3": { keyCode: "Digit3", isShifted: false},
-  "4": { keyCode: "Digit4", isShifted: false},
-  "5": { keyCode: "Digit5", isShifted: false},
-  "6": { keyCode: "Digit6", isShifted: false},
-  "7": { keyCode: "Digit7", isShifted: false},
-  "8": { keyCode: "Digit8", isShifted: false},
-  "9": { keyCode: "Digit9", isShifted: false},
-  "0": { keyCode: "Digit0", isShifted: false},
-  "q": { keyCode: "KeyQ", isShifted: false},
-  "w": { keyCode: "KeyW", isShifted: false},
-  "e": { keyCode: "KeyE", isShifted: false},
-  "r": { keyCode: "KeyR", isShifted: false},
-  "t": { keyCode: "KeyT", isShifted: false},
-  "y": { keyCode: "KeyY", isShifted: false},
-  "u": { keyCode: "KeyU", isShifted: false},
-  "i": { keyCode: "KeyI", isShifted: false},
-  "o": { keyCode: "KeyO", isShifted: false},
-  "p": { keyCode: "KeyP", isShifted: false},
-  "a": { keyCode: "KeyA", isShifted: false},
-  "s": { keyCode: "KeyS", isShifted: false},
-  "d": { keyCode: "KeyD", isShifted: false},
-  "f": { keyCode: "KeyF", isShifted: false},
-  "g": { keyCode: "KeyG", isShifted: false},
-  "h": { keyCode: "KeyH", isShifted: false},
-  "j": { keyCode: "KeyJ", isShifted: false},
-  "k": { keyCode: "KeyK", isShifted: false},
-  "l": { keyCode: "KeyL", isShifted: false},
-  "z": { keyCode: "KeyZ", isShifted: false},
-  "x": { keyCode: "KeyX", isShifted: false},
-  "c": { keyCode: "KeyC", isShifted: false},
-  "v": { keyCode: "KeyV", isShifted: false},
-  "b": { keyCode: "KeyB", isShifted: false},
-  "n": { keyCode: "KeyN", isShifted: false},
-  "m": { keyCode: "KeyM", isShifted: false},
-  "!": { keyCode: "Digit1", isShifted: true},
-  "@": { keyCode: "Digit2", isShifted: true},
-  "$": { keyCode: "Digit4", isShifted: true},
-  "%": { keyCode: "Digit5", isShifted: true},
-  "^": { keyCode: "Digit6", isShifted: true},
-  "*": { keyCode: "Digit8", isShifted: true},
-  "(": { keyCode: "Digit9", isShifted: true},
-  "Q": { keyCode: "KeyQ", isShifted: true},
-  "W": { keyCode: "KeyW", isShifted: true},
-  "E": { keyCode: "KeyE", isShifted: true},
-  "T": { keyCode: "KeyT", isShifted: true},
-  "Y": { keyCode: "KeyY", isShifted: true},
-  "I": { keyCode: "KeyI", isShifted: true},
-  "O": { keyCode: "KeyO", isShifted: true},
-  "P": { keyCode: "KeyP", isShifted: true},
-  "S": { keyCode: "KeyS", isShifted: true},
-  "D": { keyCode: "KeyD", isShifted: true},
-  "G": { keyCode: "KeyG", isShifted: true},
-  "H": { keyCode: "KeyH", isShifted: true},
-  "J": { keyCode: "KeyJ", isShifted: true},
-  "K": { keyCode: "KeyL", isShifted: true},
-  "Z": { keyCode: "KeyZ", isShifted: true},
-  "C": { keyCode: "KeyC", isShifted: true},
-  "V": { keyCode: "KeyV", isShifted: true},
-  "B": { keyCode: "KeyB", isShifted: true},
-}
+  1: { keyCode: "Digit1", isShifted: false },
+  2: { keyCode: "Digit2", isShifted: false },
+  3: { keyCode: "Digit3", isShifted: false },
+  4: { keyCode: "Digit4", isShifted: false },
+  5: { keyCode: "Digit5", isShifted: false },
+  6: { keyCode: "Digit6", isShifted: false },
+  7: { keyCode: "Digit7", isShifted: false },
+  8: { keyCode: "Digit8", isShifted: false },
+  9: { keyCode: "Digit9", isShifted: false },
+  0: { keyCode: "Digit0", isShifted: false },
+  q: { keyCode: "KeyQ", isShifted: false },
+  w: { keyCode: "KeyW", isShifted: false },
+  e: { keyCode: "KeyE", isShifted: false },
+  r: { keyCode: "KeyR", isShifted: false },
+  t: { keyCode: "KeyT", isShifted: false },
+  y: { keyCode: "KeyY", isShifted: false },
+  u: { keyCode: "KeyU", isShifted: false },
+  i: { keyCode: "KeyI", isShifted: false },
+  o: { keyCode: "KeyO", isShifted: false },
+  p: { keyCode: "KeyP", isShifted: false },
+  a: { keyCode: "KeyA", isShifted: false },
+  s: { keyCode: "KeyS", isShifted: false },
+  d: { keyCode: "KeyD", isShifted: false },
+  f: { keyCode: "KeyF", isShifted: false },
+  g: { keyCode: "KeyG", isShifted: false },
+  h: { keyCode: "KeyH", isShifted: false },
+  j: { keyCode: "KeyJ", isShifted: false },
+  k: { keyCode: "KeyK", isShifted: false },
+  l: { keyCode: "KeyL", isShifted: false },
+  z: { keyCode: "KeyZ", isShifted: false },
+  x: { keyCode: "KeyX", isShifted: false },
+  c: { keyCode: "KeyC", isShifted: false },
+  v: { keyCode: "KeyV", isShifted: false },
+  b: { keyCode: "KeyB", isShifted: false },
+  n: { keyCode: "KeyN", isShifted: false },
+  m: { keyCode: "KeyM", isShifted: false },
+  "!": { keyCode: "Digit1", isShifted: true },
+  "@": { keyCode: "Digit2", isShifted: true },
+  $: { keyCode: "Digit4", isShifted: true },
+  "%": { keyCode: "Digit5", isShifted: true },
+  "^": { keyCode: "Digit6", isShifted: true },
+  "*": { keyCode: "Digit8", isShifted: true },
+  "(": { keyCode: "Digit9", isShifted: true },
+  Q: { keyCode: "KeyQ", isShifted: true },
+  W: { keyCode: "KeyW", isShifted: true },
+  E: { keyCode: "KeyE", isShifted: true },
+  T: { keyCode: "KeyT", isShifted: true },
+  Y: { keyCode: "KeyY", isShifted: true },
+  I: { keyCode: "KeyI", isShifted: true },
+  O: { keyCode: "KeyO", isShifted: true },
+  P: { keyCode: "KeyP", isShifted: true },
+  S: { keyCode: "KeyS", isShifted: true },
+  D: { keyCode: "KeyD", isShifted: true },
+  G: { keyCode: "KeyG", isShifted: true },
+  H: { keyCode: "KeyH", isShifted: true },
+  J: { keyCode: "KeyJ", isShifted: true },
+  K: { keyCode: "KeyL", isShifted: true },
+  Z: { keyCode: "KeyZ", isShifted: true },
+  C: { keyCode: "KeyC", isShifted: true },
+  V: { keyCode: "KeyV", isShifted: true },
+  B: { keyCode: "KeyB", isShifted: true },
+};
 
 const acceptedGhostKeys = [
   "1",
@@ -214,13 +214,13 @@ const acceptedGhostKeys = [
   "C",
   "V",
   "B",
-]
+];
 
-const timeouts = []
+const timeouts = [];
 
 const songs = {
-  "None": "",
-  "Sweden": `[6et]| 7| [8yo]| 0| [9r]| 8| [I5y]||
+  None: "",
+  Sweden: `[6et]| 7| [8yo]| 0| [9r]| 8| [I5y]||
 [6etu]| 7| [8yoa]| 0| [I9ry]| 8| [I5yp]||
 [6etu]| 7| [8yoa]| 0| [I9ry]| 8| [I5yp]||
 [6etu]| [7d]/ f/ [8yoa]| 0/ o. p. [I9ry]| 8/ a. d. [I5yp]||
@@ -374,27 +374,46 @@ x.,c.,b.,c.,
 [qet]|/
 [qetu]|/
 [8qeti]|/`,
-}
+  Damned: `[k30]/ f. a. k. f. a. k. f. k. f. a. k. f. a. k. f.
+[l81]/ f. s. l. f. s. l. f. z. f. s. l. f. s. l. f.
+[k30]/ f. a. k. f. a. k. f. k. f. a. k. f. a. k. f.
+[l81]/ f. s. l. f. s. l. f. z. f. s. l. f. s. l. f.
+[xk]/ f. a. k. f. a. k. f. [nk]/ f. a. k. f. a. k. f.
+[ml]/ f. s. l. f. s. l. f. z. f. s. l. f. s. l. f.
+[xk]/ f. a. k. f. a. k. f. [nk]/ f. a. k. f. a. k. f.
+[lb]/ f. s. l. f. s. l. f. z. f. s. l. f. s. l. f.
+[xk]/ f. a. k. f. a. k. f. [nk]/ f. a. k. f. a. k. f.
+[ml]/ f. s. l. f. s. l. f. z. f. s. l. f. s. l. f.
+[xk]/ f. a. k. f. a. k. f. [nk]/ f. a. k. f. a. k. f.
+[lb]/ f. s. l. f. s. l. f. z. f. s. l. f. s. l.
+h,,j,,J,, h. d. J. h. d. J. h. J. h. d. J. h. d. J. h. k. h. f. k. h. f. k. h.
+[xk]/ h. f. [zk]/ h. f. [nk]/ h.
+[JB]/ h. d. J. h. d. J. h. J. h. d. J. h. d. J. h. k. h. f. k. h. f. k. h.
+[xk]/ h. f. [zk]/ h. f. k. h. J. h. d. J. h. d. J. h.
+J. G. d. J. G. d. J. G. J. G. S. J. G. S. J. G. d.
+J. G. d. J. G. S. L. J. G. z. J. G. L. J. G. z. J.
+G. L. J. G. L. J. G. L. J. G. L. J. G. L. J. G. L.`,
+};
 
-const ghostPlayTimeContainer = document.getElementById("ghost-play-time")
-const pianoNotes = document.querySelectorAll(".note")
-const ghostPlayButton = document.getElementById("ghost-play-button")
-const ghostPlayInput = document.getElementById("ghost-play-input")
-const instrumentSelector = document.getElementById("selector")
-const sheeshInput = document.getElementById("sheesh-input")
+const ghostPlayTimeContainer = document.getElementById("ghost-play-time");
+const pianoNotes = document.querySelectorAll(".note");
+const ghostPlayButton = document.getElementById("ghost-play-button");
+const ghostPlayInput = document.getElementById("ghost-play-input");
+const instrumentSelector = document.getElementById("selector");
+const sheeshInput = document.getElementById("sheesh-input");
 
 function safePlay(sound) {
   let playPromise = sound.play();
 
   if (playPromise !== undefined) {
     playPromise
-      .then(_ => {
+      .then((_) => {
         // Automatic playback started!
-        return
+        return;
       })
-      .catch(error => {
+      .catch((error) => {
         // Auto-play was prevented
-        return
+        return;
       });
   }
 }
