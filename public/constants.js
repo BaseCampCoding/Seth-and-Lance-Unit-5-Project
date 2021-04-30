@@ -381,6 +381,7 @@ const pianoNotes = document.querySelectorAll(".note")
 const ghostPlayButton = document.getElementById("ghost-play-button")
 const ghostPlayInput = document.getElementById("ghost-play-input")
 const instrumentSelector = document.getElementById("selector")
+const sheeshInput = document.getElementById("sheesh-input")
 
 function safePlay(sound) {
   let playPromise = sound.play();

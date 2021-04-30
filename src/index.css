@@ -106,10 +106,11 @@ h3 {
   align-items: center;
   background-color: white;
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 40px;
   padding: 5px;
   width: fit-content;
-  border-radius: 5%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 #ghostTitle {
@@ -156,4 +157,37 @@ h3 {
 #song-list {
   border-top-left-radius: 5%;
   border-bottom-left-radius: 5%;
+}
+
+#piano-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 25px auto 0;
+  padding: 15px;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+#piano-header h3 {
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+#sheesh-label {
+  margin-left: 20px;
+}
+
+#drumheader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 25px auto 0;
+  padding: 15px;
+  width: fit-content;
+  border-radius: 10px;
 }
