@@ -96,6 +96,7 @@ const Piano = () => {
           <option value="Wet-Hands">Wet Hands</option>
           <option value="Married-Life">Married Life</option>
           <option value="Damned">Damned</option>
+          <option value="Unforgiven">Unforgiven</option>
         </select>
         <textarea
           spellCheck="false"

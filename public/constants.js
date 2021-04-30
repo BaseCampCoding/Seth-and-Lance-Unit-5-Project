@@ -374,25 +374,42 @@ x.,c.,b.,c.,
 [qet]|/
 [qetu]|/
 [8qeti]|/`,
-  Damned: `[k30]/f.a.k.f.a.k.f.k.f.a.k.f.a.k.f.
-[l81]/f.s.l.f.s.l.f.z.f.s.l.f.s.l.f.
-[k30]/f.a.k.f.a.k.f.k.f.a.k.f.a.k.f.
-[l81]/f.s.l.f.s.l.f.z.f.s.l.f.s.l.f.
-[xk]/f.a.k.f.a.k.f.[nk]/f.a.k.f.a.k.f.
-[ml]/f.s.l.f.s.l.f.z.f.s.l.f.s.l.f.
-[xk]/f.a.k.f.a.k.f.[nk]/f.a.k.f.a.k.f.
-[lb]/f.s.l.f.s.l.f.z.f.s.l.f.s.l.f.
-[xk]/f.a.k.f.a.k.f.[nk]/f.a.k.f.a.k.f.
-[ml]/f.s.l.f.s.l.f.z.f.s.l.f.s.l.f.
-[xk]/f.a.k.f.a.k.f.[nk]/f.a.k.f.a.k.f.
-[lb]/f.s.l.f.s.l.f.z.f.s.l.f.s.l.
-h,,j,,J,,h.d.J.h.d.J.h.J.h.d.J.h.d.J.h.k.h.f.k.h.f.k.h.
-[xk]/h.f.[zk]/h.f.[nk]/h.
-[JB]/h.d.J.h.d.J.h.J.h.d.J.h.d.J.h.k.h.f.k.h.f.k.h.
-[xk]/h.f.[zk]/h.f.k.h.J.h.d.J.h.d.J.h.
-J.G.d.J.G.d.J.G.J.G.S.J.G.S.J.G.d.
-J.G.d.J.G.S.L.J.G.z.J.G.L.J.G.z.J.
-G.L.J.G.L.J.G.L.J.G.L.J.G.L.J.G.L.`,
+  Damned: `[k30].f,,a,,k,,f,,a,,k,,f,,k,,f,,a,,k,,f,,a,,k,,f,,
+[l81].f,,s,,l,,f,,s,,l,,f,,z,,f,,s,,l,,f,,s,,l,,f,,
+[k30].f,,a,,k,,f,,a,,k,,f,,k,,f,,a,,k,,f,,a,,k,,f,,
+[l81].f,,s,,l,,f,,s,,l,,f,,z,,f,,s,,l,,f,,s,,l,,f,,
+[xk].f,,a,,k,,f,,a,,k,,f,,[nk].f,,a,,k,,f,,a,,k,,f,,
+[ml].f,,s,,l,,f,,s,,l,,f,,z,,f,,s,,l,,f,,s,,l,,f,,
+[xk].f,,a,,k,,f,,a,,k,,f,,[nk].f,,a,,k,,f,,a,,k,,f,,
+[lb].f,,s,,l,,f,,s,,l,,f,,z,,f,,s,,l,,f,,s,,l,,f,,
+[xk].f,,a,,k,,f,,a,,k,,f,,[nk].f,,a,,k,,f,,a,,k,,f,,
+[ml].f,,s,,l,,f,,s,,l,,f,,z,,f,,s,,l,,f,,s,,l,,f,,
+[xk].f,,a,,k,,f,,a,,k,,f,,[nk].f,,a,,k,,f,,a,,k,,f,,
+[lb].f,,s,,l,,f,,s,,l,,f,,z,,f,,s,,l,,f,,s,,l,,
+h,,j,,J,,h,,d,,J,,h,,d,,J,,h,,J,,h,,d,,J,,h,,d,,J,,h,,k,,h,,f,,k,,h,,f,,k,,h,,
+[xk].h,,f,,[zk].h,,f,,[nk].h,,
+[JB].h,,d,,J,,h,,d,,J,,h,,J,,h,,d,,J,,h,,d,,J,,h,,k,,h,,f,,k,,h,,f,,k,,h,,
+[xk].h,,f,,[zk].h,,f,,k,,h,,J,,h,,d,,J,,h,,d,,J,,h,,
+J,,G,,d,,J,,G,,d,,J,,G,,J,,G,,S,,J,,G,,S,,J,,G,,d,,
+J,,G,,d,,J,,G,,S,,L,,J,,G,,z,,J,,G,,L,,J,,G,,z,,J,,
+G,,L,,J,,G,,L,,J,,G,,L,,J,,G,,L,,J,,G,,L,,J,,G,,L,,`,
+  Unforgiven: `e||
+[u92]. y,e,u,y,e,u,y,e,u,y,e,i,y,e.
+[u92]. y,e,u,y,e,u,y,e,u,y,e,i,y,e.
+[u92]. y,e,u,y,e,u,y,e,u,y,e,i,y,e.
+[u92]. y,e,u,y,e,u,y,e,u,y,e,i,y,e.
+[ye92]|y.u.[ie].u,y,[ie].u,y,e,
+[ue92]|y,e,y,u,[ie].u,y,i,u,y,e,
+[ye92]|y,u,[ie].u,y,[ie].u,y,e,
+[ue92]|y,e,y, u,[ie].u,y,i,u,y,e,
+[y92]|e,y, u, [qi4]| e,t,i, i,
+[i81]|u,t, w.[t60].,t,y, u,
+[ye92]|y,u,y/[tqi4]|p|
+[tp81].ou|u [eT6]|y,u,
+[y92]|y,e,u,y,e,u,y,e,u,y,e,i,y,e.
+[u92].y,e,u,y,e,u,y,e,u,y,e,,i.
+[oe92].i,[ue92].i,[ut6]|[e6].[so],
+[wso5].[oa].[woa5].[yi].[yi92]`,
 };
 
 const ghostPlayTimeContainer = document.getElementById("ghost-play-time");
