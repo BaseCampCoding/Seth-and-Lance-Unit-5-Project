@@ -123,6 +123,10 @@ if (instrumentSelector.value === "piano") {
       for (const char of ghostPlayInput.value) {
         // Syntax Characters
         switch (char) {
+          case " ":
+            timings.push(50)
+            notes.push("")
+            break
           case ",":
             timings.push(100);
             notes.push("");
