@@ -3,7 +3,7 @@ import DrumNote from "./DrumNote";
 const Drums = () => {
   return (
     <div>
-      <h3>These are definitely drums.</h3>
+      <h3 id="drumheader">These are definitely drums.</h3>
       <div id="drums">
         <DrumNote keyChar="1" note="snare1" />
         <DrumNote keyChar="2" note="snare2" />
