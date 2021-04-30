@@ -6,12 +6,16 @@ const Piano = () => {
   return (
     <>
       <h3>This is definitely a piano.</h3>
-      <label htmlFor="beginner">Beginner Mode</label>
-      <input
-        onChange={() => setBeginnerMode(!beginnerMode)}
-        id="beginner"
-        type="checkbox"
-      ></input>
+      <div>
+        <label htmlFor="beginner">Beginner Mode</label>
+        <input
+          onChange={() => setBeginnerMode(!beginnerMode)}
+          id="beginner"
+          type="checkbox"
+        ></input>
+        <label htmlFor="sheesh-input">Sheeshano</label>
+        <input id="sheesh-input" type="checkbox"/>
+      </div>
       <br /> <br />
       <div className="notes">
         <Key beginner={beginnerMode} type="note-white" keyChar="1" note="c2" />

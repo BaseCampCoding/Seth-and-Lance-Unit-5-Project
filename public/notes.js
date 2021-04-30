@@ -1,7 +1,19 @@
+let pianoSoundPack = "piano"
+
 if (instrumentSelector.value === "piano") {
+  sheeshInput.addEventListener("click", () => {
+    console.log(sheeshInput.checked)
+    if (sheeshInput.checked) {
+      pianoSoundPack = "sheeshano"
+    } else {
+      pianoSoundPack = "piano"
+    }
+    console.log(pianoSoundPack)
+  })
+
   function preloadNotes() {
     for (const note of pianoNotes) {
-      const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
+      const sound = new Audio(`/instruments/${pianoSoundPack}/${note.id}.ogg`);
       sound.volume = 0;
       safePlay(sound);
     }
@@ -11,7 +23,7 @@ if (instrumentSelector.value === "piano") {
   
   for (const note of pianoNotes) {
     note.addEventListener("click", () => {
-      const sound = new Audio(`/instruments/piano/${note.id}.ogg`);
+      const sound = new Audio(`/instruments/${pianoSoundPack}/${note.id}.ogg`);
       sound.volume = 0.2;
       safePlay(sound);
       setTimeout(() => {
@@ -24,7 +36,7 @@ if (instrumentSelector.value === "piano") {
     if (!Event.repeat && acceptedPianoKeys.includes(Event.code) && instrumentSelector.value === "piano") {
       if (Event.code && Event.shiftKey) {
         const sound = new Audio(
-          `/instruments/piano/${pianoKeysTranslator[Event.code]}s.ogg`
+          `/instruments/${pianoSoundPack}/${pianoKeysTranslator[Event.code]}s.ogg`
         );
         sound.volume = 0.2;
         const key = document.getElementById(
@@ -35,7 +47,7 @@ if (instrumentSelector.value === "piano") {
       }
   
       const sound = new Audio(
-        `/instruments/piano/${pianoKeysTranslator[Event.code]}.ogg`
+        `/instruments/${pianoSoundPack}/${pianoKeysTranslator[Event.code]}.ogg`
       );
       const key = document.getElementById(`${pianoKeysTranslator[Event.code]}`);
       key?.classList.add("note-white-pressed");
@@ -65,7 +77,7 @@ if (instrumentSelector.value === "piano") {
     function play(keyCode, isShifted) {
       if (isShifted) {
         const sound = new Audio(
-          `/instruments/piano/${pianoKeysTranslator[keyCode]}s.ogg`
+          `/instruments/${pianoSoundPack}/${pianoKeysTranslator[keyCode]}s.ogg`
         );
         sound.volume = 0.2;
         const key = document.getElementById(`${pianoKeysTranslator[keyCode]}s`);
@@ -78,7 +90,7 @@ if (instrumentSelector.value === "piano") {
       }
   
       const sound = new Audio(
-        `/instruments/piano/${pianoKeysTranslator[keyCode]}.ogg`
+        `/instruments/${pianoSoundPack}/${pianoKeysTranslator[keyCode]}.ogg`
         );
         const key = document.getElementById(`${pianoKeysTranslator[keyCode]}`);
       key?.classList.add("note-white-pressed");
