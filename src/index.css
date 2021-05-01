@@ -179,3 +179,15 @@ h3 {
 #sheesh-label {
   margin-left: 20px;
 }
+
+#drumheader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 25px auto 0;
+  padding: 15px;
+  width: fit-content;
+  border-radius: 10px;
+}

@@ -14,8 +14,10 @@ const Piano = () => {
             id="beginner"
             type="checkbox"
           ></input>
-          <label id="sheesh-label" htmlFor="sheesh-input">Sheeshano</label>
-          <input id="sheesh-input" type="checkbox"/>
+          <label id="sheesh-label" htmlFor="sheesh-input">
+            Sheeshano
+          </label>
+          <input id="sheesh-input" type="checkbox" />
         </div>
       </div>
       <br /> <br />
@@ -93,6 +95,8 @@ const Piano = () => {
           <option value="Sweden">Sweden</option>
           <option value="Wet-Hands">Wet Hands</option>
           <option value="Married-Life">Married Life</option>
+          <option value="Damned">Damned</option>
+          <option value="Unforgiven">Unforgiven</option>
         </select>
         <textarea
           spellCheck="false"
@@ -103,6 +107,7 @@ const Piano = () => {
         <div id="instructions">
           <ul>
             <li>Group Notes with [ ]</li>
+            <li>" " = 50ms rest</li>
             <li>"," = 100ms rest</li>
             <li>"." = 250ms rest</li>
             <li>"/" = 500ms rest</li>
